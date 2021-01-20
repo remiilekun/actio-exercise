@@ -14,7 +14,7 @@ const Home = () => {
     <Wrapper>
       <BannerCarousel data={classes} />
 
-      <Classes />
+      <Classes data={classes} />
     </Wrapper>
   );
 };
