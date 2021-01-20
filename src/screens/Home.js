@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import BannerCarousel from '@components/organisms/BannerCarousel';
 import { Classes } from '@components/organisms/Classes';
-import { classes } from '@data/classes';
+import { banners } from '@data';
 
 const Wrapper = styled.View`
   background-color: ${({ theme }) => theme.colors.dark};
@@ -12,8 +12,7 @@ const Wrapper = styled.View`
 const Home = () => {
   return (
     <Wrapper>
-      <BannerCarousel data={classes} />
-
+      <BannerCarousel data={banners} />
       <Classes />
     </Wrapper>
   );

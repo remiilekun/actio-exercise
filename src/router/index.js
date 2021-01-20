@@ -16,12 +16,11 @@ const Router = () => {
         style: { backgroundColor: '#000' },
       }}
       screenOptions={({ route }) => ({
-        tabBarLabel: ({ color }) => null,
-
+        tabBarLabel: () => null,
         tabBarIcon: () => {
           const icons = {
             Home: <HomeIcon />,
-            Grid: <GridIcon />,
+            HomeWithClasses: <GridIcon />,
             Calendar: <CalendarIcon />,
             Menu: <MenuIcon />,
           };
@@ -30,7 +29,7 @@ const Router = () => {
       })}
     >
       <Tab.Screen component={Home} name="Home" />
-      <Tab.Screen component={HomeWithClasses} name="Grid" />
+      <Tab.Screen component={HomeWithClasses} name="HomeWithClasses" />
       <Tab.Screen component={Home} name="Calendar" />
       <Tab.Screen component={Home} name="Menu" />
     </Tab.Navigator>

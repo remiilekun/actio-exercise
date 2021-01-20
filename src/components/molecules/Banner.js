@@ -1,4 +1,6 @@
 import React from 'react';
+import { Platform } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import styled from 'styled-components';
 import { Button, Text } from '../atoms';
 
@@ -9,13 +11,22 @@ const Wrapper = styled.View`
 `;
 
 const Content = styled.View`
-  padding: 20px 30px;
   flex: 1;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: ${getStatusBarHeight() + 30}px;
 `;
 
 const TitleWrapper = styled.View`
   margin-bottom: 30px;
   margin-top: auto;
+`;
+
+const Title = styled.Text`
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${Platform.OS === 'ios' ? 'RedRock' : 'RedRock-Regular'};
+  font-size: ${({ theme }) => theme.font.size['6xl']};
 `;
 
 const TagWrapper = styled.View`
@@ -40,9 +51,7 @@ export const Banner = ({ tag, name, image }) => {
         </TagWrapper>
 
         <TitleWrapper>
-          <Text fontFamily="redRock" fontSize="6xl">
-            {name.replace(' ', '\n')}
-          </Text>
+          <Title>{name.replace(' ', '\n')}</Title>
         </TitleWrapper>
 
         <Button>TAKE A LOOK</Button>

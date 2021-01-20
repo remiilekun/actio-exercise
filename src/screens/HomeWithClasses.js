@@ -9,14 +9,15 @@ const Wrapper = styled.View`
   flex: 1;
 `;
 
-const Home = () => {
+const HomeWithClasses = () => {
+  const banners = [];
+
   return (
     <Wrapper>
       <BannerCarousel data={classes} />
-
       <Classes data={classes} />
     </Wrapper>
   );
 };
 
-export default Home;
+export default HomeWithClasses;

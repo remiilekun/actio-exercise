@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import styled from 'styled-components/native';
 import { Button, Text } from '../atoms';
 
@@ -7,6 +8,7 @@ const TextWrapper = styled.View`
 `;
 
 export const EmptyClassState = () => {
+  const { navigate } = useNavigation();
   return (
     <>
       <TextWrapper>
@@ -16,7 +18,9 @@ export const EmptyClassState = () => {
         </Text>
       </TextWrapper>
 
-      <Button solid={false}>EXPLORE COURSES</Button>
+      <Button onPress={() => navigate('HomeWithClasses')} solid={false}>
+        EXPLORE COURSES
+      </Button>
     </>
   );
 };
