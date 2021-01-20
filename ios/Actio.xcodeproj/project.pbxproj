@@ -67,6 +67,7 @@
 		5BDDB7C767D9CA45E53F3DF0 /* Pods-Actio-ActioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.release.xcconfig"; sourceTree = "<group>"; };
 		631807AC778F8BF4796262E4 /* Pods-Actio-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Actio-tvOS/Pods-Actio-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		64FB396A1412265349598226 /* Pods-Actio-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-tvOSTests/Pods-Actio-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		70FA173EC9D44C0CBB9D603D /* RedRock-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RedRock-Regular.ttf"; path = "../assets/fonts/RedRock-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Actio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E7D89E5588FA6BDD319A63C /* libPods-Actio-ActioTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-ActioTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		919B540409F74CDA8DE6C68B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		EB7EC34EA1AB79B6DCC250B0 /* Pods-Actio-ActioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.debug.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		70FA173EC9D44C0CBB9D603D /* RedRock-Regular.ttf */ = {isa = PBXFileReference; name = "RedRock-Regular.ttf"; path = "../assets/fonts/RedRock-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,7 +402,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		1CA79EED6E855988E95AF740 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
