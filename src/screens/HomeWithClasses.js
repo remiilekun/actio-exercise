@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import BannerCarousel from '@components/organisms/BannerCarousel';
 import { Classes } from '@components/organisms/Classes';
@@ -10,12 +10,28 @@ const Wrapper = styled.View`
 `;
 
 const HomeWithClasses = () => {
-  const banners = [];
+  const [activeIndex, setActive] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive(x => (x >= classes.length - 1 ? 0 : x + 1));
+    }, 8000);
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, []);
+
+  const filteredClasses = React.useMemo(() => {
+    const newClasses = [...classes];
+    newClasses.splice(activeIndex, 1);
+    return newClasses;
+  }, [activeIndex]);
 
   return (
     <Wrapper>
-      <BannerCarousel data={classes} />
-      <Classes data={classes} />
+      <BannerCarousel data={[classes[activeIndex]]} />
+      <Classes data={filteredClasses} />
     </Wrapper>
   );
 };

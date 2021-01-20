@@ -18,7 +18,7 @@ export const EmptyClassState = () => {
         </Text>
       </TextWrapper>
 
-      <Button onPress={() => navigate('HomeWithClasses')} solid={false}>
+      <Button onPress={() => navigate('HomeWithClasses')} variant="outline">
         EXPLORE COURSES
       </Button>
     </>

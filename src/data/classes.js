@@ -1,3 +1,4 @@
+import addMinutes from 'date-fns/addMinutes';
 import careImage from '@assets/img/class-banners/care.png';
 import focusImage from '@assets/img/class-banners/focus.png';
 import motivationImage from '@assets/img/class-banners/motivation.png';
@@ -12,21 +13,21 @@ export const classes = [
     id: 'mm',
   },
   {
-    date: new Date(),
+    date: addMinutes(new Date(), 5),
     image: stretchImage,
     name: 'Strong Stretch',
     tutor: 'Sophie-Anna',
     id: 'ss',
   },
   {
-    date: new Date(),
+    date: addMinutes(new Date(), 10),
     image: focusImage,
     name: 'Soft focus',
     tutor: 'Ann-Sophie',
     id: 'sf',
   },
   {
-    date: new Date(),
+    date: addMinutes(new Date(), 15),
     image: careImage,
     name: 'Care & Love',
     tutor: 'Sophanna',

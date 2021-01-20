@@ -1,10 +1,9 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
 import { Text } from './Text';
 
-export const Button = ({ children, solid, style, ...props }) => {
+export const Button = ({ children, variant, style, ...props }) => {
   const animation = new Animated.Value(0);
   const inputRange = [0, 1];
   const outputRange = [1, 0.9];
@@ -32,37 +31,53 @@ export const Button = ({ children, solid, style, ...props }) => {
 
   const buttonProps = { onPressIn, onPressOut, activeOpacity: 0.8 };
 
-  return solid ? (
-    <TouchableOpacity
-      style={{ transform: [{ scale }] }}
-      {...buttonProps}
-      {...props}
-    >
-      <LinearGradient
-        colors={['#FF5D95', '#D8306B']}
-        style={[styles.gradientButton, style]}
-      >
-        {renderChildren()}
-      </LinearGradient>
-    </TouchableOpacity>
-  ) : (
-    <TouchableOpacity
-      style={[styles.outlineButton, { transform: [{ scale }] }, style]}
-      {...buttonProps}
-      {...props}
-    >
-      {renderChildren()}
-    </TouchableOpacity>
-  );
+  switch (variant) {
+    case 'outline':
+      return (
+        <TouchableOpacity
+          style={[styles.outlineButton, { transform: [{ scale }] }, style]}
+          {...buttonProps}
+          {...props}
+        >
+          {renderChildren()}
+        </TouchableOpacity>
+      );
+
+    case 'transparent':
+      return (
+        <TouchableOpacity
+          style={[styles.transparentButton, { transform: [{ scale }] }, style]}
+          {...buttonProps}
+          {...props}
+        >
+          {children}
+        </TouchableOpacity>
+      );
+
+    default:
+      return (
+        <TouchableOpacity
+          style={{ transform: [{ scale }] }}
+          {...buttonProps}
+          {...props}
+        >
+          <LinearGradient
+            colors={['#FF5D95', '#D8306B']}
+            style={[styles.gradientButton, style]}
+          >
+            {renderChildren()}
+          </LinearGradient>
+        </TouchableOpacity>
+      );
+  }
 };
 
 const buttonStyles = {
   alignItems: 'center',
   borderRadius: 500,
   justifyContent: 'center',
-  paddingHorizontal: 15,
+  paddingHorizontal: 10,
   paddingVertical: 10,
-  width: '100%',
 };
 
 var styles = StyleSheet.create({
@@ -72,6 +87,7 @@ var styles = StyleSheet.create({
     shadowOffset: { height: 3, width: 0 },
     paddingVertical: 14,
     shadowRadius: 6,
+    width: '100%',
   },
   outlineButton: {
     ...buttonStyles,
@@ -80,9 +96,18 @@ var styles = StyleSheet.create({
     shadowColor: '#7C1C3D',
     shadowOffset: { height: 0, width: 0 },
     shadowRadius: 6,
+    width: '100%',
+  },
+  transparentButton: {
+    ...buttonStyles,
+    alignSelf: 'flex-start',
+    backgroundColor: '#222222CC',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingVertical: 5,
   },
 });
 
 Button.defaultProps = {
-  solid: true,
+  variant: 'solid',
 };
