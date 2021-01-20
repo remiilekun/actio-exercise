@@ -16,9 +16,13 @@ export const font = {
     '7xl': `${scale(64)}px`,
   },
   family: {
-    bold: 'OpenSana-Bold',
-    normal: 'OpenSana-Regular',
-    semibold: 'OpenSana-SemiBold',
+    openSans: 'OpenSans',
+    redRock: 'RedRock',
+  },
+  weight: {
+    bold: 'Bold',
+    normal: 'Regular',
+    semibold: 'SemiBold',
   },
   align: {
     left: 'left',

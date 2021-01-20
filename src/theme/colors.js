@@ -1,6 +1,7 @@
 export const colors = {
   black: '#000000',
   white: '#ffffff',
+  dark: '#222222',
   cyan: {
     100: '#58D7D9',
     200: '#39CCD0',
@@ -8,7 +9,6 @@ export const colors = {
   grey: {
     100: '#CCCCCC',
     200: '#444444',
-    300: '#222222',
   },
   yellow: '#FFD800',
   lemon: '#83F6A1',

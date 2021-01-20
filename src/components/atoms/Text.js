@@ -8,8 +8,8 @@ export const Text = styled(props => (
 ))`
   color: ${({ theme, color = 'white' }) =>
     pluckDeep(color)(theme.colors) || color};
-  font-family: ${({ theme, fontWeight }) =>
-    theme.font.family[fontWeight || 'normal']};
+  font-family: ${({ theme, fontWeight = 'normal', fontFamily = 'openSans' }) =>
+    `${theme.font.family[fontFamily]}-${theme.font.weight[fontWeight]}`};
   font-size: ${({ theme, fontSize = '16px' }) =>
     theme.font.size[fontSize] || fontSize};
   text-align: ${({ theme, textAlign = 'left' }) => theme.font.align[textAlign]};
