@@ -19,7 +19,7 @@ const Content = styled.View`
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: ${getStatusBarHeight() + 30}px;
+  padding-top: ${Platform.OS === 'ios' ? getStatusBarHeight() + 60 : 50}px;
 `;
 
 const TitleWrapper = styled.View`
